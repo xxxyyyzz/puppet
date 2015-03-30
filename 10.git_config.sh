@@ -5,25 +5,26 @@ then
    echo -e "USAGE: 10.git_config.sh <username>"
    exit 1
 fi
+USER=${1}
 
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-="
 echo "Initial git configuration"
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-="
 
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-echo -e "CMD: su nlambev -c 'git config --global user.name \"${1}\"'"
+echo -e "CMD: su ${USER} -c 'git config --global user.name \"${USER}\"'"
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-su nlambev -c 'git config --global user.name "${1}"'
+su ${USER} -c 'git config --global user.name "${USER}"'
 
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-echo "CMD: su nlambev -c 'git config --global user.email \"${1}@localhost\"'"
+echo "CMD: su nlambev -c 'git config --global user.email \"${USER}@localhost\"'"
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-su nlambev -c 'git config --global user.email "${1}@localhost"'
+su ${USER} -c 'git config --global user.email "${USER}@localhost"'
 
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-echo "CMD: su nlambev -c 'git config --global color.ui auto'"
+echo "CMD: su ${USER} -c 'git config --global color.ui auto'"
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-su nlambev -c 'git config --global color.ui auto'
+su ${USER} -c 'git config --global color.ui auto'
 
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 echo "CMD: cd /etc/puppet/modules"
