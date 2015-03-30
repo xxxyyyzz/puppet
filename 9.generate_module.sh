@@ -11,7 +11,7 @@ then
    exit 1
 fi
 MODULE=$1
-PREFIX="propuppet"
+PREFIX="xxxyyyzz"
 
 color_print "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 color_print "CMD: puppet module generate ${PREFIX}-${MODULE}"
