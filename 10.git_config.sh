@@ -1,17 +1,24 @@
+#!/bin/bash
+
+if [ "${1}" ==  ""]
+then
+   echo -e "USAGE: 10.git_config.sh <username>"
+   exit 1
+fi
+
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-="
 echo "Initial git configuration"
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-="
 
+echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+echo -e "CMD: su nlambev -c 'git config --global user.name \"${1}\"'"
+echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
+su nlambev -c 'git config --global user.name "${1}"'
 
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-echo -e "CMD: su nlambev -c 'git config --global user.name \"Nikola Lambev\"'"
+echo "CMD: su nlambev -c 'git config --global user.email \"${1}@localhost\"'"
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-su nlambev -c 'git config --global user.name "Nikola Lambev"'
-
-echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-echo "CMD: su nlambev -c 'git config --global user.email \"nlambev@localhost\"'"
-echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
-su nlambev -c 'git config --global user.email "nlambev@localhost"'
+su nlambev -c 'git config --global user.email "${1}@localhost"'
 
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-="
 echo "CMD: su nlambev -c 'git config --global color.ui auto'"
