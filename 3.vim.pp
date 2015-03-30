@@ -1,4 +1,4 @@
-node 'centos7c.local.dlink.com' {
+node 'hostname' {
      package { 'vim':
                 ensure => present,
      }
